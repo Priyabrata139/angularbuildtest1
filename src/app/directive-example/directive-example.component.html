@@ -1,0 +1,28 @@
+<p>directive-example works!</p>
+
+
+
+<button (click)="showCoursesHandeler()">
+Show/Hide Courses
+</button>
+
+<div *ngIf="showCourses">
+    <div *ngFor="let course of courses">
+        <div appFontSize [ngStyle]="styleObj"  [ngClass]="classObj" >{{course}}<button [ngStyle]="styleObj" (click)="showCourseDurationHandeler(course)">Click</button></div>
+    </div> 
+    <button (click)="changecolorHandeler()">Change Colors</button>
+    <button (click)="changeBackgroundcolorHandeler()" [style.color]="textColor">Change Background Colors</button>
+    <input [(ngModel)]='textColor'>
+
+</div>
+
+<div [ngSwitch]="courseName" >
+    <div *ngSwitchCase="'web'" >1 month</div>
+    <div *ngSwitchCase="'and'" >2 month</div>
+    <div *ngSwitchCase="'java'" >3 month</div>
+    <div *ngSwitchCase="'c'" >4 month</div>
+    <div *ngSwitchCase="'c++'" >5 month</div>
+    <div *ngSwitchCase="'javascript'" >5 month</div>
+    
+</div>
+
